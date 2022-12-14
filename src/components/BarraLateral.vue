@@ -1,8 +1,10 @@
 <template>
     <header>
         <h1>
-            <img src="../assets/logo.png" alt="logo-vue">
+            {{ myName }}
         </h1>
+
+        <h2>Tracker</h2>
 
         <button class="button" @click="alterarTema">
             {{ textoDoBotao }}
@@ -11,16 +13,26 @@
 </template>
 
 <script lang="ts">
+//Importa as definições nativas do Vue para este componente
 import { defineComponent } from 'vue';
 
+//Eportar este componente para o projeto todo
 export default defineComponent({
+    //define o nome do componente
     name: 'BarraLateral',
+
+    //declara um evento que será emidido do filho para o pai
     emits: ['aoTemaAlterado'],
+
+    //Data é uma função que retorna um único objeto com dados que serão enviados para o frontend
     data () {
         return {
-            modoEscuroAtivo: false
+            modoEscuroAtivo: false,
+            myName: 'Schwantes'
         }
     },
+
+    // PAREI AQUI
     computed: {
         textoDoBotao () {
             if (this.modoEscuroAtivo) {
@@ -48,6 +60,17 @@ header {
     width: 100%;
     height: 100vh;
     text-align: center;
+}
+
+header h1 {
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+header h2 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 768px) {

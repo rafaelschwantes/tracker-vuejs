@@ -33,7 +33,8 @@ export default defineComponent({
   data () {
     return {
       tarefas: [] as ITarefa[],
-      modoEscuroAtivo: false
+      modoEscuroAtivo: false,
+
     }
   },
   computed: {
