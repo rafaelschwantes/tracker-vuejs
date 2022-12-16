@@ -7,7 +7,7 @@
       <Formulario @aoSalvarTarefa="salvarTarefa"/>
       <div class="lista">
         <TarefaComponent v-for="(tarefa, index) in tarefas" :key="index" :tarefa="tarefa"/>
-        <BoxComponent v-if="listaEstaVazia">Ainda não houve registro de tarefas.</BoxComponent>
+        <BoxComponent v-if="listaEstaVazia">Ainda não houve registro de tarefa.</BoxComponent>
       </div>
     </div>
   </main>
